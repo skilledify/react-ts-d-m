@@ -2,7 +2,7 @@ import Header from "../components/Header/Header";
 
 
 
-const Finance = () => {
+const Finance: React.FC  = () => {
   return (
     <section className="not-found">
         <Header/>

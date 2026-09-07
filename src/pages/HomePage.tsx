@@ -10,7 +10,7 @@ import SwiperComponent from "../components/sections/SwiperComponent/SwiperCompon
 
 
 
-const Home = () => {
+const Home: React.FC  = () => {
   return (
     <div className="wrapper">
       <Header />

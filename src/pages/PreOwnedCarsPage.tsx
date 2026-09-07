@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header";
 
-const PreOwnedCars = () => {
+
+const PreOwnedCars: React.FC = () => {
   return (
     <section className="not-found">
       <Header />

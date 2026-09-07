@@ -5,7 +5,7 @@ import Blog from "../components/sections/Blog/Blog"
 import ContactUs from "../components/sections/ContactUs/ContactUs"
 
 
-const Contacts = () => {
+const Contacts: React.FC  = () => {
   return (
     <div className="wrapper">
 

@@ -8,21 +8,21 @@ import PreOwnedCarsPage from "./pages/PreOwnedCarsPage";
 import FinancePage from "./pages/FinancePage";
 import LeaseVsBuyPage from "./pages/LeaseVsBuyPage";
 import { AppRoutes } from "./constants/global.constants";
-import './App.css'
+// import './App.css'
 
 
 const App: FC = () => {
 
   return (
-    <Router basename="/react-d-m">
+    <Router basename="/react-ts-d-m">
       <Routes>
         <Route path={AppRoutes.HOMEPAGE} element={<HomePage />} />
         <Route path={AppRoutes.CATALOGPAGE} element={<CatalogPage />} />
-        <Route path="/preownedcars" element={<PreOwnedCarsPage />} />
-        <Route path="/finance" element={<FinancePage />} />
-        <Route path="/leasevsbuy" element={<LeaseVsBuyPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path={AppRoutes.PREOwNEDCARSPAGE} element={<PreOwnedCarsPage />} />
+        <Route path={AppRoutes.FINANCEPAGE} element={<FinancePage />} />
+        <Route path={AppRoutes.LEASYVSBUYPGE} element={<LeaseVsBuyPage />} />
+        <Route path={AppRoutes.CONTACTSPAGE} element={<ContactsPage />} />
+        <Route path={AppRoutes.NOT_FOUNDPAGE} element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

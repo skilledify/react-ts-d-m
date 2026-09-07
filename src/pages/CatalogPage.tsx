@@ -5,7 +5,7 @@ import Choose from "../components/sections/Choose/Choose"
 import Blog from "../components/sections/Blog/Blog"
 
 
-const Catalog = () => {
+const Catalog: React.FC  = () => {
   return (
     <div className="wrapper">
       <Header />

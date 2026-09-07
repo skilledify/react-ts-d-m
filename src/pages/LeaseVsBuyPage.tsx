@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header";
 
 
-const LeaseVsBuy = () => {
+const LeaseVsBuy: React.FC  = () => {
   return (
     <section className="not-found">
       <Header />

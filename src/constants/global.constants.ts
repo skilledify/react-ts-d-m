@@ -5,5 +5,5 @@
     FINANCEPAGE: "/finance",
     LEASYVSBUYPGE: "/leasevsbuy",
     CONTACTSPAGE: "/contacts",
-    NOTFOUNDPAGE: "*",
-     }
+    NOT_FOUNDPAGE: "*",
+     } as const;
