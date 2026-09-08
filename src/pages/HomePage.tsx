@@ -15,7 +15,6 @@ const Home: React.FC  = () => {
     <div className="wrapper">
       <Header />
       <Main>
-
            <Top/>
           <SwiperComponent/> 
           <WhyLease/>

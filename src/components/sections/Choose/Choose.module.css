@@ -1,0 +1,108 @@
+.choose {
+  padding: 100px 0 150px;
+}
+
+.tabs {
+  padding-bottom: 70px;
+}
+
+.tabsBtn {
+  padding: 0 clamp(0rem, -12.62rem + 28.85vw, 9.375rem);
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: clamp(2.5rem, 1.167rem + 6.67vw, 6.25rem);
+}
+
+.tabsBtnItem {
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.tabsBtnItemActive {
+  color: #0066ff;
+}
+
+.tabsContentItemActive {
+  display: grid;
+  visibility: visible;
+  opacity: 1;
+  position: static;
+  pointer-events: all;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  width: 100%;
+  gap: 40px;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid #0066ff;
+  max-width: 270px;
+}
+
+.cardImg {
+  height: 170px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #0066ff;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardImg img {
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+.cardPrice {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.cardLink {
+  display: block;
+  color: #0066ff;
+  border-top: 1px solid #0066ff;
+}
+
+.showmoreLink {
+  display: block;
+  text-align: center;
+    background-color: #151515;
+    padding: 13px;
+    color: #fff;
+    width: 225px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .tabsBtn {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cards {
+    grid-template-columns: min(100%, 270px);
+    justify-content: center;
+  }
+}

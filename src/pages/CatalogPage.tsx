@@ -5,7 +5,7 @@ import Choose from "../components/sections/Choose/Choose"
 import Blog from "../components/sections/Blog/Blog"
 
 
-const Catalog: React.FC  = () => {
+const CatalogPage: React.FC  = () => {
   return (
     <div className="wrapper">
       <Header />
@@ -18,4 +18,4 @@ const Catalog: React.FC  = () => {
   )
 }
 
-export default Catalog
+export default CatalogPage

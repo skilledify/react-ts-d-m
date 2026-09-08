@@ -1,0 +1,61 @@
+/*------ Why lease --------*/
+
+.whyLease {
+  padding: 60px 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.itemImg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.itemTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.itemText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666666;
+  margin: 0;
+}
+@media (max-width: 860px) {
+  .why-lease__list {
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+  }
+}
+
+@media (max-width: 460px) {
+  .why-lease__list {
+
+    grid-template-columns: 1fr;
+
+
+  }
+}
+
+
+/*------ /Why lease --------*/

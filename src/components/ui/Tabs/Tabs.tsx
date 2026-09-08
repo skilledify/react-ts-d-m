@@ -5,6 +5,7 @@ export interface TabButtonProps {
   tabId: string;
   label: ReactNode;
   children?: ReactNode;
+  active?: boolean;
 }
 
 export interface TabContentProps {

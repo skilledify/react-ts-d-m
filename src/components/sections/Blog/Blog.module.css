@@ -1,0 +1,61 @@
+.blog {
+  padding-bottom: 150px;
+}
+
+.items {
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemImg {
+  margin-bottom: 30px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.itemBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemTitle {
+  flex-basis: 446px;
+}
+
+.itemLink {
+  color: #fff;
+  background-color: #0066FF;
+  padding: 4px 20px;
+  text-decoration: none;
+}
+
+.showmoreLink {
+  text-transform: uppercase;
+  background-color: #151515;
+  padding: 13px;
+  color: #fff;
+  width: 225px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+/* Адаптив */
+@media (max-width: 1230px) {
+  .items {
+    flex-direction: column;
+    align-items: center;
+  }
+}

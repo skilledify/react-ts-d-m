@@ -8,7 +8,6 @@ import PreOwnedCarsPage from "./pages/PreOwnedCarsPage";
 import FinancePage from "./pages/FinancePage";
 import LeaseVsBuyPage from "./pages/LeaseVsBuyPage";
 import { AppRoutes } from "./constants/global.constants";
-// import './App.css'
 
 
 const App: FC = () => {
@@ -18,9 +17,9 @@ const App: FC = () => {
       <Routes>
         <Route path={AppRoutes.HOMEPAGE} element={<HomePage />} />
         <Route path={AppRoutes.CATALOGPAGE} element={<CatalogPage />} />
-        <Route path={AppRoutes.PREOwNEDCARSPAGE} element={<PreOwnedCarsPage />} />
+        <Route path={AppRoutes.PREOWNEDCARSPAGE} element={<PreOwnedCarsPage />} />
         <Route path={AppRoutes.FINANCEPAGE} element={<FinancePage />} />
-        <Route path={AppRoutes.LEASYVSBUYPGE} element={<LeaseVsBuyPage />} />
+        <Route path={AppRoutes.LEASYVSBUYPAGE} element={<LeaseVsBuyPage />} />
         <Route path={AppRoutes.CONTACTSPAGE} element={<ContactsPage />} />
         <Route path={AppRoutes.NOT_FOUNDPAGE} element={<NotFoundPage />} />
       </Routes>

@@ -1,13 +1,12 @@
 import Header from "../components/Header/Header";
 
-
 const PreOwnedCars: React.FC = () => {
   return (
-    <section className="not-found">
+    <section>
       <Header />
-      <div className="container">
-        <div className="not-found__inner">
-          <p className="not-found__text">Page PreOwnedCars</p>
+      <div className="mx-auto container">
+        <div className="flex justify-center items-center min-h-screen text-center">
+          <p className="text-[42px]">Page PreOwnedCars</p>
         </div>
       </div>
     </section>

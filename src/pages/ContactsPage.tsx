@@ -2,10 +2,10 @@ import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
 import Main from "../components/Main/Main"
 import Blog from "../components/sections/Blog/Blog"
-import ContactUs from "../components/sections/ContactUs/ContactUs"
+import ContactUs from "./../components/sections/ContactUs/ContactUs"
 
 
-const Contacts: React.FC  = () => {
+const ContactsPage: React.FC  = () => {
   return (
     <div className="wrapper">
 
@@ -19,4 +19,4 @@ const Contacts: React.FC  = () => {
   )
 }
 
-export default Contacts
+export default ContactsPage

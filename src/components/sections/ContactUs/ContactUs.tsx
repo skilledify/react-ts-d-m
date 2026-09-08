@@ -1,136 +1,95 @@
-// import SectionTitle from "../../ui/SectionTitle/SectionTitle";
 
-// const ContactUs = () => {
-//   return (
-//     <section className="contacts">
-//       <div className="container">
-//         <SectionTitle
-//           className="section-title contacts__title"
-//           marginBottom="20px"
-//           title="Contact Us"
-//           align="center"
-//         />
-//         <p className="contacts__text item-title">
-//           Feel free to contact us with questions, potencial partnerships or
-//           media inquiries
-//         </p>
-//         <form action="#" className="form">
-//           <input type="text" className="form__input" placeholder="Name" />
-//           <input type="email" className="form__input" placeholder="E-mail" />
-//           <textarea
-//             className="form__textarea"
-//             placeholder="Your text"
-//           ></textarea>
-//           <button className="form__btn" type="submit">
-//             SUBMIT
-//           </button>
-//         </form>
-//       </div>
-//     </section>
-//   );
-// }
+import React from 'react';
+import { useForm, type SubmitHandler } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import styles from './ContactUs.module.css'; // 👈 Импорт CSS-модуля
 
-// export default ContactUs
+const formSchema = z.object({
+  username: z
+    .string()
+    .min(2, { message: 'Имя должно содержать минимум 2 символа' }),
+  email: z
+    .string()
+    .email({ message: 'Введите корректный email' }),
+  age: z
+    .number({ message: 'Введите число' })
+    .min(18, { message: 'Возраст должен быть не менее 18 лет' }),
+});
 
+type FormValues = z.infer<typeof formSchema>;
 
-import { useState } from "react";
-import SectionTitle from "../../ui/SectionTitle/SectionTitle";
-
-const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+export const ContactUs: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: '',
+      email: '',
+      age: 18,
+    },
   });
 
-  const [errors, setErrors] = useState({});
-
-  const validate = () => {
-    let newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "E-mail is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid e-mail format";
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      console.log("Form submitted:", formData);
-      // Здесь можно отправить данные на сервер
-      setFormData({ name: "", email: "", message: "" });
-      setErrors({});
-    }
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log('Отправляемые данные:', data);
   };
 
   return (
-    <section className="contacts">
-      <div className="container">
-        <SectionTitle
-          className="section-title contacts__title"
-          marginBottom="20px"
-          title="Contact Us"
-          align="center"
-        />
-        <p className="contacts__text item-title">
-          Feel free to contact us with questions, potential partnerships or
-          media inquiries
-        </p>
-        <form onSubmit={handleSubmit} className="form">
+    <section className={styles.contacts}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        {/* Поле Username */}
+        <div className={styles.fieldGroup}>
           <input
-            type="text"
-            name="name"
-            className="form__input"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
+            id="username"
+            placeholder="Ваше имя"
+            className={`${styles.input} ${errors.username ? styles.inputError : ''}`}
+            {...register('username')}
           />
-          {errors.name && <p className="error">{errors.name}</p>}
+          {errors.username && (
+            <span className={styles.error}>{errors.username.message}</span>
+          )}
+        </div>
 
+        {/* Поле Email */}
+        <div className={styles.fieldGroup}>
           <input
+            id="email"
             type="email"
-            name="email"
-            className="form__input"
-            placeholder="E-mail"
-            value={formData.email}
-            onChange={handleChange}
+            placeholder="Ваш Email"
+            className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
+            {...register('email')}
           />
-          {errors.email && <p className="error">{errors.email}</p>}
+          {errors.email && (
+            <span className={styles.error}>{errors.email.message}</span>
+          )}
+        </div>
 
-          <textarea
-            name="message"
-            className="form__textarea"
-            placeholder="Your text"
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
-          {errors.message && <p className="error">{errors.message}</p>}
+        {/* Поле Age */}
+        <div className={styles.fieldGroupFull}>
+          <input
+            id="age"
+            type="number"
+            placeholder="Возраст"
+            className={`${styles.input} ${errors.age ? styles.inputError : ''}`}
+            {...register('age', { valueAsNumber: true })}
+          />
+          {errors.age && (
+            <span className={styles.error}>{errors.age.message}</span>
+          )}
+        </div>
 
-          <button className="form__btn" type="submit">
-            SUBMIT
-          </button>
-        </form>
-      </div>
+        {/* Кнопка */}
+        <button
+          type="submit"
+          className={styles.btn}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Отправка...' : 'Отправить'}
+        </button>
+      </form>
     </section>
   );
 };

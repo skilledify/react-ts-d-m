@@ -10,7 +10,7 @@ import { Link } from 'react-router';
         <div className="absolute bg-indigo-500 px-2 rounded text-white text-sm rotate-12">
           Страница не найдена
         </div>
-        <p className="font-semibold text-gray-800 text-2xl md:text-3xl">
+        <p className="pt-2 text-gray-800 md:text-3 text-2xl t-2font-semibold">
           Упс! Вы зашли куда-то не туда.
         </p>
         <p className="text-gray-500">

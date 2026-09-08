@@ -1,0 +1,102 @@
+.contacts {
+  padding: clamp(3.75rem, 2.861rem + 4.44vw, 6.25rem) 0 clamp(5.313rem, 3.868rem + 7.22vw, 9.375rem);
+}
+
+.contactsTitle {
+  margin-bottom: 20px;
+}
+
+.contactsText {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 clamp(0rem, -2.222rem + 11.11vw, 6.25rem);
+}
+
+.form {
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.fieldGroup {
+  width: 270px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroupFull {
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #0066FF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+}
+
+.input::placeholder {
+  opacity: 0.5;
+}
+
+.inputError {
+  border-color: red;
+}
+
+.textarea {
+  width: 100%;
+  height: 290px;
+  border: 1px solid #0066FF;
+  resize: none;
+  padding: 28px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+}
+
+.textarea::placeholder {
+  opacity: 0.5;
+}
+
+.btn {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #151515;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 13px 61px;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 590px) {
+  .fieldGroup {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

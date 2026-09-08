@@ -1,0 +1,76 @@
+.howDoes {
+  padding-bottom: 150px;
+}
+
+.inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.text {
+  padding-top: 50px;
+}
+
+.title {
+  padding: 50px 0;
+}
+
+.list {
+  padding-bottom: 20px;
+  counter-reset: myCounter;
+}
+
+.item {
+  list-style-type: none;
+  width: 270px;
+  position: relative;
+  margin-left: auto;
+  padding: 19px 0 19px clamp(7.25rem, 4.432rem + 14.09vw, 15rem);
+  box-sizing: content-box;
+  min-height: 63px;
+}
+
+.item + .item {
+  margin-top: 40px;
+}
+
+.item::before {
+  counter-increment: myCounter;
+  content: counter(myCounter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #0066ff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 460px) {
+  .item::before {
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    left: 218px;
+    top: -60px;
+  }
+
+  .item + .item {
+    margin-top: 23px;
+  }
+
+  .title {
+    margin-bottom: 70px;
+  }
+
+  .item {
+    min-height: 118px;
+    margin-left: clamp(-6.563rem, -12.848rem + 31.43vw, -3.813rem);
+  }
+}

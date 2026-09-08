@@ -1,13 +1,12 @@
 import Header from "../components/Header/Header";
 
-
-const LeaseVsBuy: React.FC  = () => {
+const LeaseVsBuy: React.FC = () => {
   return (
-    <section className="not-found">
+    <section>
       <Header />
-      <div className="container">
-        <div className="not-found__inner">
-          <p className="not-found__text">Page LeaseVsBuy</p>
+      <div className="mx-auto container">
+        <div className="flex justify-center items-center min-h-screen text-center">
+          <p className="text-[42px]">Page LeaseVsBuy</p>
         </div>
       </div>
     </section>
