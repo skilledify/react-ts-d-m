@@ -1,20 +1,23 @@
-
 import React from 'react';
+import SectionTitle from '../../ui/SectionTitle/SectionTitle';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import styles from './ContactUs.module.css'; // 👈 Импорт CSS-модуля
+import styles from './ContactUs.module.css';
 
 const formSchema = z.object({
   username: z
     .string()
-    .min(2, { message: 'Имя должно содержать минимум 2 символа' }),
+    .min(1, 'Поле обязательно для заполнения')
+    .min(2, 'Имя должно содержать минимум 2 символа'),
   email: z
     .string()
-    .email({ message: 'Введите корректный email' }),
-  age: z
-    .number({ message: 'Введите число' })
-    .min(18, { message: 'Возраст должен быть не менее 18 лет' }),
+    .min(1, 'Поле обязательно для заполнения')
+    .email('Введите корректный email'),
+  message: z
+    .string()
+    .min(1, 'Поле обязательно для заполнения')
+    .min(10, 'Сообщение должно содержать минимум 10 символов'),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -23,28 +26,47 @@ export const ContactUs: React.FC = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
+    mode: 'onSubmit', // 👈 Проверка запускается только при нажатии на кнопку "Отправить"
     defaultValues: {
       username: '',
       email: '',
-      age: 18,
+      message: '',
     },
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log('Отправляемые данные:', data);
+
+    // 👈 Явный сброс значений к пустым строкам
+    reset({
+      username: '',
+      email: '',
+      message: '',
+    });
   };
 
   return (
     <section className={styles.contacts}>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        {/* Поле Username */}
+      <SectionTitle
+        className="section-title"
+        title="Contact Us"
+        align="center"
+        marginBottom="50px"
+      />
+      <p className={`${styles.contactsText} item-title`}>
+        Feel free to contact us with questions, potential partnerships or media inquiries
+      </p>
+
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+        {/* Username */}
         <div className={styles.fieldGroup}>
           <input
             id="username"
-            placeholder="Ваше имя"
+            placeholder="Ваше имя *"
             className={`${styles.input} ${errors.username ? styles.inputError : ''}`}
             {...register('username')}
           />
@@ -53,12 +75,12 @@ export const ContactUs: React.FC = () => {
           )}
         </div>
 
-        {/* Поле Email */}
+        {/* Email */}
         <div className={styles.fieldGroup}>
           <input
             id="email"
             type="email"
-            placeholder="Ваш Email"
+            placeholder="Ваш Email *"
             className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
             {...register('email')}
           />
@@ -67,27 +89,26 @@ export const ContactUs: React.FC = () => {
           )}
         </div>
 
-        {/* Поле Age */}
+        {/* Message */}
         <div className={styles.fieldGroupFull}>
-          <input
-            id="age"
-            type="number"
-            placeholder="Возраст"
-            className={`${styles.input} ${errors.age ? styles.inputError : ''}`}
-            {...register('age', { valueAsNumber: true })}
+          <textarea
+            id="message"
+            placeholder="Ваше сообщение *"
+            className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
+            {...register('message')}
           />
-          {errors.age && (
-            <span className={styles.error}>{errors.age.message}</span>
+          {errors.message && (
+            <span className={styles.error}>{errors.message.message}</span>
           )}
         </div>
 
-        {/* Кнопка */}
+        {/* Submit Button */}
         <button
           type="submit"
           className={styles.btn}
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Отправка...' : 'Отправить'}
+          {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
         </button>
       </form>
     </section>

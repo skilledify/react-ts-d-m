@@ -18,20 +18,25 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 16px;
+  box-sizing: border-box;
+  align-items: flex-start; /* 👈 Защищает поля от сдвигов по высоте при появлении ошибок */
 }
 
 .fieldGroup {
   width: 270px;
-  margin-bottom: 50px;
+  margin-bottom: 35px; /* Уменьшили отступ, так как текст ошибки занимает место */
   display: flex;
   flex-direction: column;
+  position: relative; /* 👈 Для стабильного позиционирования */
 }
 
 .fieldGroupFull {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .input {
@@ -43,6 +48,7 @@
   font-weight: 400;
   line-height: 1.3;
   color: #000;
+  box-sizing: border-box;
 }
 
 .input::placeholder {
@@ -50,7 +56,7 @@
 }
 
 .inputError {
-  border-color: red;
+  border-color: red !important;
 }
 
 .textarea {
@@ -64,6 +70,7 @@
   font-weight: 400;
   line-height: 1.3;
   color: #000;
+  box-sizing: border-box;
 }
 
 .textarea::placeholder {
@@ -88,15 +95,23 @@
   cursor: not-allowed;
 }
 
+/* 👈 Абсолютное позиционирование текста ошибки прямо под полем */
 .error {
   color: red;
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
 }
 
-@media (max-width: 590px) {
+@media (max-width: 640px) {
   .fieldGroup {
     width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .fieldGroupFull {
     margin-bottom: 30px;
   }
 }
