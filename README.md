@@ -1,75 +1,45 @@
-# React + TypeScript + Vite
+# 🚗 Car Marketplace & Directory Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application for exploring, searching, and managing car listings. Built with speed, type safety, and scalability in mind using the latest web development technologies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Built With
 
-## React Compiler
+This project leverages a modern front-end tech stack designed for optimal performance and developer experience:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **[React 19](https://react.dev/)** – Core UI library for building component-driven interfaces.
+* **[TypeScript](https://www.typescriptlang.org/)** – Provides strict static typing for robust, error-free code.
+* **[Vite](https://vitejs.dev/)** – Next-generation, lightning-fast build tool and development server.
+* **[React Router 7](https://reactrouter.com/)** – Latest version of React Router for powerful declarative routing and dynamic navigation.
+* **[React Hook Form](https://react-hook-form.com/)** – High-performance, flexible form handling with easy validation.
+* **[Tailwind CSS](https://tailwindcss.com/)** – Utility-first CSS framework for custom, responsive, and modern UI design.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Car Listing & Catalog:** Browse through various car models with detailed specifications.
+* **Advanced Search & Filtering:** Filter vehicles by make, model, year, price, and fuel type.
+* **Dynamic Routing:** Seamless navigation powered by React Router 7.
+* **Interactive Forms:** Efficient car submission and search forms managed with React Hook Form.
+* **Fully Responsive:** Beautifully tailored UI across desktop, tablet, and mobile devices.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
 
-```
+Follow these steps to set up and run the project locally on your machine.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Ensure you have Node.js installed:
+* **Node.js**: `v18.0.0` or higher
+* **npm** or **yarn** / **pnpm**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
 
-```
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/skilledify/react-ts-d-m.git](https://github.com/skilledify/react-ts-d-m.git)
+   cd react-ts-d-m
