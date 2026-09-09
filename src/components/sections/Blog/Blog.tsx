@@ -1,3 +1,4 @@
+import { useState } from "react";
 import blog1 from "../../../assets/images/blog-1.jpg";
 import blog2 from "../../../assets/images/blog-2.jpg";
 import styles from "./Blog.module.css";
@@ -22,15 +23,36 @@ const BLOG_POSTS: BlogPost[] = [
     title: "A Guide to Road-Tripping With Pets",
     link: "#",
   },
+  {
+    id: 3,
+    image: blog1,
+    title: "Top 10 Car Maintenance Tips for Summer",
+    link: "#",
+  },
+  {
+    id: 4,
+    image: blog2,
+    title: "Electric Vehicles: Everything You Need to Know",
+    link: "#",
+  },
 ];
 
 const Blog = () => {
+  const [visibleCount, setVisibleCount] = useState<number>(2);
+
+  const handleShowMore = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setVisibleCount((prevCount) => prevCount + 2);
+  };
+
+  const visiblePosts = BLOG_POSTS.slice(0, visibleCount);
+  const hasMore = visibleCount < BLOG_POSTS.length;
+
   return (
     <section className={styles.blog}>
-      {/* Предполагается, что container глобальный class. Если он тоже из модуля, используйте styles.container */}
       <div className="container">
         <div className={styles.items}>
-          {BLOG_POSTS.map((post) => (
+          {visiblePosts.map((post) => (
             <article key={post.id} className={styles.item}>
               <img
                 src={post.image}
@@ -38,7 +60,7 @@ const Blog = () => {
                 className={styles.itemImg}
               />
               <div className={styles.itemBottom}>
-                <h4 className={`${styles.itemTitle} item-title`}>
+                <h4 className={styles.itemTitle}>
                   {post.title}
                 </h4>
                 <a href={post.link} className={styles.itemLink}>
@@ -48,9 +70,16 @@ const Blog = () => {
             </article>
           ))}
         </div>
-        <a href="#" className={styles.showmoreLink}>
-          SHOW MORE
-        </a>
+
+        {hasMore && (
+          <a
+            href="#"
+            onClick={handleShowMore}
+            className={styles.showmoreLink}
+          >
+            SHOW MORE
+          </a>
+        )}
       </div>
     </section>
   );

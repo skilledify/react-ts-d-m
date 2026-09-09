@@ -40,12 +40,15 @@
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   width: 100%;
   gap: 40px;
+  margin-bottom: 50px; /* Отступ до кнопки SHOW MORE */
 }
 
 .card {
   text-align: center;
   border: 1px solid #0066ff;
   max-width: 270px;
+  margin: 0 auto; /* Центрирование карточки на мобильных */
+  width: 100%;
 }
 
 .cardImg {
@@ -60,6 +63,7 @@
 
 .cardImg img {
   height: 100%;
+  object-fit: cover;
 }
 
 .cardTitle {
@@ -80,19 +84,20 @@
   display: block;
   color: #0066ff;
   border-top: 1px solid #0066ff;
+  padding: 10px 0;
+  text-decoration: none;
 }
 
 .showmoreLink {
   display: block;
   text-align: center;
-    background-color: #151515;
-    padding: 13px;
-    color: #fff;
-    width: 225px;
-    margin: 0 auto;
-    text-align: center;
-    display: block;
-    text-decoration: none;
+  background-color: #151515;
+  padding: 13px;
+  color: #fff;
+  width: 225px;
+  margin: 0 auto;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 860px) {
