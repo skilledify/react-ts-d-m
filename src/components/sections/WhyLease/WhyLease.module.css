@@ -1,0 +1,46 @@
+/*------ Why lease --------*/
+
+.whyLease {
+  padding: 150px 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.item {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.itemImg {
+  margin: 0 auto 30px;
+}
+
+.itemTitle {
+  font-size: clamp(.75rem, .486rem + 1.32vw, 1.5rem);
+    font-weight: 700;
+    color: #151515;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.itemText {
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 460px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

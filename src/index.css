@@ -1,0 +1,310 @@
+  @import "tailwindcss";
+
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  padding-top: 120px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: .9;
+} 
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-title{
+  text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(2.375rem, 2.124rem + 1.15vw, 3rem);
+    font-weight: 700;
+}
+
+
+.item-title {
+  font-size: clamp(0.75rem, 0.486rem + 1.32vw, 1.5rem);
+  font-weight: 700;
+  color: #151515;
+}
+
+
+.main {
+  flex-grow: 1 ;
+}
+
+
+
+/*------ Contacts --------*/
+
+.contacts {
+  padding: clamp(3.75rem, 2.861rem + 4.44vw, 6.25rem) 0 clamp(5.313rem, 3.868rem + 7.22vw, 9.375rem);
+}
+
+.contacts__title {
+  margin-bottom: 20px;
+}
+
+.contacts__text {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 clamp(0rem, -2.222rem + 11.11vw, 6.25rem);
+}
+
+.form {
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form__input {
+  width: 270px;
+  padding: 18px 20px;
+  display: inline-block;
+  border: 1px solid #0066FF;
+  margin-bottom: 50px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+}
+
+
+.form__input::placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+  opacity: .5;
+}
+
+.form__textarea {
+  width: 100%;
+  height: 290px;
+  border: 1px solid #0066FF;
+  resize: none;
+  padding: 28px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+  margin-bottom: 50px;
+}
+
+.form__textarea::placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+  opacity: .5;
+}
+
+.form__btn {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #151515;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 13px 61px;
+  margin: 0 auto;
+  border: none;
+}
+
+@media (max-width: 590px) {
+  .form__input {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+
+/*------ /Contact Us page --------*/
+
+/*------ New cars page --------*/
+
+.choose {
+  padding: 100px 0 150px;
+
+}
+
+.tabs {
+  padding-bottom: 70px;
+}
+
+.tabs__btn {
+  padding: 0 clamp(0rem, -12.62rem + 28.85vw, 9.375rem);
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: clamp(2.5rem, 1.167rem + 6.67vw, 6.25rem);
+}
+
+.tabs__btn-item {
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.tabs__btn-item--active {
+  color: #0066FF;
+}
+
+/* .tabs__content {} */
+/* 
+.tabs__content-item {
+  visibility: hidden;
+    opacity: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, -0.568rem + 9.09vw, 6.25rem) clamp(0.125rem, -0.739rem + 4.32vw, 2.5rem); 
+} */
+
+.tabs__content-item.tabs__content-item--active {
+  display: grid;
+    visibility: visible;
+    opacity: 1;
+      position: static;
+        pointer-events: all;
+}
+
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  width: 100%;
+  gap: 40px;
+      @media (max-width: 860px) {
+          grid-template-columns: min(100%, 270px);
+          justify-content: center;
+        }
+}
+ 
+
+.card {
+  text-align: center;
+  border: 1px solid #0066FF;
+  max-width: 270px;
+}
+
+.card__img {
+  height: 170px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #0066FF;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card__img img {
+  height: 100%;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+.card__text {
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.card__price {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.card__link {
+  display: block;
+  color: #0066FF;
+  border-top: 1px solid #0066FF;
+}
+
+/* .showmore-link {} */
+
+/* @media (max-width: 1230px) {
+  .tabs__content-item {
+
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content;
+    margin: 0 auto;
+    gap: clamp(1.25rem, -1.339rem + 7.14vw, 2.5rem) clamp(0.25rem, -4.98rem + 9.73vw, 2.5rem);
+  }
+} */
+
+@media (max-width: 860px) {
+  .tabs__btn {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+  /* .tabs__content-item {
+
+    grid-template-columns: repeat(2, 1fr);
+  } */
+
+
+ @media (max-width: 580px) {
+   .blog__items {
+     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+   }
+
+ }
+
+/*------ /New cars page --------*/
+
+
+

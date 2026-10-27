@@ -1,0 +1,6 @@
+.section-title {
+    font-weight: 700;
+    font-size: clamp(2.375rem, 2.124rem + 1.15vw, 3rem);
+    color: #151515;
+    text-align: center;
+}

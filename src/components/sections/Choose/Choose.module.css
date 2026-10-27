@@ -1,0 +1,189 @@
+.choose {
+  padding: 100px 0 150px;
+}
+
+.choose :global(.tabs__btn-item) {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.choose :global(.tabs__btn-item)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #0066ff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.choose :global(.tabs__btn-item--active)::after {
+  transform: scaleX(1);
+}
+
+.choose :global(.tabs__content-item--active) {
+  animation: tabFade 0.45s ease both;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  width: 100%;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #0066ff;
+  max-width: 270px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px rgba(0, 102, 255, 0.18);
+}
+
+.cardImg {
+  position: relative;
+  height: 170px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #0066ff;
+  background-color: #eef4ff;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardImg img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImg img {
+  transform: scale(1.06);
+}
+
+.cardTag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: rgba(21, 21, 21, 0.82);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+.cardFavorite {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
+.cardNote {
+  margin-bottom: 14px;
+  padding: 0 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.cardPrice {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.cardLink {
+  display: block;
+  margin-top: auto;
+  color: #0066ff;
+  border-top: 1px solid #0066ff;
+  padding: 10px 0;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.cardLink:hover {
+  background-color: #0066ff;
+  color: #fff;
+}
+
+.showmoreLink {
+  display: block;
+  text-align: center;
+  background-color: #151515;
+  padding: 13px;
+  color: #fff;
+  width: 225px;
+  margin: 0 auto;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.showmoreLink:hover {
+  background-color: #0066ff;
+  transform: translateY(-2px);
+}
+
+@keyframes tabFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .cards {
+    grid-template-columns: min(100%, 270px);
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardImg img,
+  .showmoreLink,
+  .choose :global(.tabs__content-item--active) {
+    transition: none;
+    animation: none;
+  }
+}

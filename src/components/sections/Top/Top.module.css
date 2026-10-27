@@ -1,0 +1,28 @@
+.top {
+  color: #fff;
+  text-align: center;
+  padding-top: 250px;
+  padding-bottom: 50px;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+}
+
+.title {
+  padding-bottom: 40px;
+  font-size: clamp(2.875rem, 1.739rem + 5.68vw, 6rem);
+  font-weight: 700;
+}
+
+/* В CSS Modules BEM-нотацию вроде .top__link можно упростить до .link */
+.link {
+  background-color: #151515;
+  padding: 23px;
+  max-width: 430px;
+  width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: clamp(1.625rem, 1.398rem + 1.14vw, 2.25rem);
+  font-weight: 700;
+}

@@ -1,0 +1,47 @@
+.button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(21, 21, 21, 0.12);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.94);
+  color: #151515;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 16px rgba(21, 21, 21, 0.12);
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.button:hover {
+  border-color: #0066ff;
+  color: #0066ff;
+  transform: scale(1.08);
+}
+
+.button:focus-visible {
+  outline: 2px solid #0066ff;
+  outline-offset: 3px;
+}
+
+.active {
+  border-color: #0066ff;
+  background-color: #fff;
+  color: #0066ff;
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.24);
+}
+
+.active:hover {
+  background-color: #eff6ff;
+  border-color: #0066ff;
+  color: #0066ff;
+}
+
+.active svg {
+  fill: currentColor;
+}
