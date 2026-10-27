@@ -10,8 +10,8 @@
 .choose :global(.tabs__btn-item)::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: auto;
   bottom: -8px;
   height: 2px;
   border-radius: 2px;
